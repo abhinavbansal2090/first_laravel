@@ -61,11 +61,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Create User
               </p>
             </a>
-            <a href="/report" class="nav-link active">
+            <!--<a href="/report" class="nav-link active">
               <p>
                 Report
               </p>
-            </a>
+            </a>-->
           </li>
         </ul>
       </nav>
