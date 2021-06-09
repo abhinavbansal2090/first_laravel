@@ -15,6 +15,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="bower_components/admin-lte/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="bower_components/admin-lte/dist/css/adminlte.min.css">
+  <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+  <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+  <script>
+        $(function () {
+            $('#startdate,#enddate').datetimepicker({
+                useCurrent: false,
+                minDate: moment()
+            });
+            $('#startdate').datetimepicker().on('dp.change', function (e) {
+                var incrementDay = moment(new Date(e.date));
+                incrementDay.add(1, 'days');
+                $('#enddate').data('DateTimePicker').minDate(incrementDay);
+                $(this).data("DateTimePicker").hide();
+            });
+
+            $('#enddate').datetimepicker().on('dp.change', function (e) {
+                var decrementDay = moment(new Date(e.date));
+                decrementDay.subtract(1, 'days');
+                $('#startdate').data('DateTimePicker').maxDate(decrementDay);
+                 $(this).data("DateTimePicker").hide();
+            });
+
+        });
+    </script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

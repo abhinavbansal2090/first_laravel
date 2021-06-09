@@ -32,6 +32,10 @@ Route::post('submit', 'App\Http\Controllers\AdminController@creatRole');
 //Subadmin
 Route::get('subadmin', 'App\Http\Controllers\SubadminController@index')->middleware('role:Subadmin');
 Route::post('form', 'App\Http\Controllers\SubadminController@creatTicket')->middleware('role:Subadmin');
+Route::get('report', 'App\Http\Controllers\SubadminController@showReport')->middleware('role:Subadmin');
+//Route::post('report', 'App\Http\Controllers\SubadminController@getRecord')->middleware('role:Subadmin');
+Route::get('role', 'App\Http\Controllers\SubadminController@showData')->middleware('role:Subadmin');
+Route::post('roleuser', 'App\Http\Controllers\SubadminController@creatUser')->middleware('role:Subadmin');
 
 //Agent
 Route::get('agent', 'App\Http\Controllers\AgentController@index')->middleware('role:Agent');

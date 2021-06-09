@@ -1,4 +1,4 @@
-@extends('adminlte')
+@extends('subadmindasboard')
 @section('content')
 <section class="content" >
   <div class="container-fluid">
