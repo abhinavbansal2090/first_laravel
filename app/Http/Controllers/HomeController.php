@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends BaseController
 {
     public function index() {
-      $record = DB::table('subadmin')->select('ticketStatus')->whereDate('created_at', Carbon::today())->get();
+      $record1 = DB::table('users')->select('role')->where('status','on')->whereDate('created_at', Carbon::today())->get();
+      $record2 = DB::table('subadmin')->select('ticketStatus')->whereDate('created_at', Carbon::today())->get();
       //return $record;
-      return view('home',compact('record'));
+      return view('home',compact('record1','record2'));
     }
 }
