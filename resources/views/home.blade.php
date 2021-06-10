@@ -25,7 +25,7 @@
               <h5 class="m-0">Active Tickets</h5>
             </div>
             <div class="card-body">
-              <p class="card-text">{{$record->where('ticketStatus', 'pending')->count()}}</p>
+              <p class="card-text">{{$record2->where('ticketStatus', 'pending')->count()}}</p>
             </div>
         </div>
 
@@ -35,7 +35,7 @@
           </div>
 
             <div class="card-body">
-              <p class="card-text">{{$record->where('ticketStatus', 'Ready to Dispatch')->count()}}</p>
+              <p class="card-text">{{$record2->where('ticketStatus', 'Ready to Dispatch')->count()}}</p>
             </div>
 
         </div><!-- /.card -->
@@ -48,7 +48,7 @@
           </div>
 
           <div class="card-body">
-            <p class="card-text">{{$record->where('ticketStatus', 'Closed')->count()}}</p>
+            <p class="card-text">{{$record2->where('ticketStatus', 'Closed')->count()}}</p>
           </div>
 
         </div>
@@ -58,7 +58,7 @@
             <h5 class="m-0">Active Agents</h5>
           </div>
           <div class="card-body">
-            <p class="card-text"></p>
+            <p class="card-text">{{$record1->where('role', 'Agent')->count()}}</p>
           </div>
         </div>
       </div>
